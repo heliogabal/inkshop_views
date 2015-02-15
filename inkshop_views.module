@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the inkshop Views feature.
+ */
+
+include_once 'inkshop_views.features.inc';
