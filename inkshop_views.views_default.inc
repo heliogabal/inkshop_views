@@ -1076,21 +1076,21 @@ function inkshop_views_views_default_views() {
   /* Display: Facets block Themen */
   $handler = $view->new_display('search_api_views_facets_block', 'Facets block Themen', 'search_api_views_facets_block_1');
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['linked_path'] = 'products';
+  $handler->display->display_options['linked_path'] = 'produkte';
   $handler->display->display_options['facet_field'] = 'field_pd_category';
   $handler->display->display_options['hide_block'] = 1;
 
   /* Display: Facets block Format */
   $handler = $view->new_display('search_api_views_facets_block', 'Facets block Format', 'search_api_views_facets_block_2');
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['linked_path'] = 'products';
+  $handler->display->display_options['linked_path'] = 'produkte';
   $handler->display->display_options['facet_field'] = 'field_pd_type';
   $handler->display->display_options['hide_block'] = 1;
 
   /* Display: Facets block Tags */
   $handler = $view->new_display('search_api_views_facets_block', 'Facets block Tags', 'search_api_views_facets_block_3');
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['linked_path'] = 'products';
+  $handler->display->display_options['linked_path'] = 'produkte';
   $handler->display->display_options['facet_field'] = 'field_tags';
   $handler->display->display_options['hide_block'] = 1;
 
