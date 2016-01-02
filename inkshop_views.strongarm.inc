@@ -16,12 +16,8 @@ function inkshop_views_strongarm() {
   $strongarm->name = 'views_block_hashes';
   $strongarm->value = array(
     'fcee2ddca741165a9752f90d7a76a664' => 'commerce_backoffice_orders-block_1',
-    '12ee390cd50dc30503906cc11aa2f55a' => 'display_products-search_api_views_facets_block_1',
-    '5d696ecceabf7d4636f78d68c7c84361' => 'display_products-search_api_views_facets_block_2',
-    '78e73a6d90260821c9380e14fef3bcdb' => 'display_products-search_api_views_facets_block_3',
-    '845f8f160dbc83c68cd4145cd492da60' => 'display_products-aehnliche_produkte_auto',
+    'b1470cd4267f415be2d5e75f95302fe2' => 'commerce_backoffice_all_product_variations-block_1',
     '49752f912f8ab9a08d50b004eeffd55d' => 'commerce_backoffice_user_orders-block_1',
-    '2f6f3c35f374c997637f644b2e123ac1' => 'produkte-search_api_views_facets_block_1',
     'f3f98e42ba2d4d3103b95e9199cf48fe' => 'commerce_reports_customers-chart_revenue',
     'c4b82619a01ea13a002f9a56cf7aa611' => 'commerce_reports_customers-chart_orders',
     '73bf5fb8a97d85b206f0ac7edff0a9aa' => 'commerce_message_messages-block_1',
@@ -36,6 +32,11 @@ function inkshop_views_strongarm() {
     'ff7824695a12b49a79aee7d394cbd917' => 'commerce_reports_sales_overview-today',
     '1a260a710ed0ccc9e8175e7301e597fe' => 'commerce_reports_sales_overview-yesterday',
     '724c01e6b3c93b66c793ff63f7402697' => 'commerce_reports_sales_overview-month',
+    '12ee390cd50dc30503906cc11aa2f55a' => 'display_products-search_api_views_facets_block_1',
+    '5d696ecceabf7d4636f78d68c7c84361' => 'display_products-search_api_views_facets_block_2',
+    '78e73a6d90260821c9380e14fef3bcdb' => 'display_products-search_api_views_facets_block_3',
+    '845f8f160dbc83c68cd4145cd492da60' => 'display_products-aehnliche_produkte_auto',
+    '2f6f3c35f374c997637f644b2e123ac1' => 'produkte-search_api_views_facets_block_1',
   );
   $export['views_block_hashes'] = $strongarm;
 
