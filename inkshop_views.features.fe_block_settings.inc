@@ -30,8 +30,8 @@ function inkshop_views_default_fe_block_settings() {
         'weight' => -37,
       ),
       'inkshop' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'sidebar_second',
+        'status' => 1,
         'theme' => 'inkshop',
         'weight' => 0,
       ),
