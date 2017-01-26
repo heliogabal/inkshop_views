@@ -57,11 +57,12 @@ function inkshop_views_default_fe_block_settings() {
     'css_class' => '',
     'custom' => 0,
     'delta' => 'display_products-block_1',
-    'icon' => 'a:2:{s:4:"icon";s:0:"";s:8:"position";s:12:"title_before";}',
+    'icon' => 'a:4:{s:4:"icon";s:0:"";s:7:"wrapper";s:0:"";s:13:"wrapper_class";s:0:"";s:8:"position";s:12:"title_before";}',
     'module' => 'views',
     'node_types' => array(),
     'pages' => 'suedlink-abo
-node/1422',
+node/1422
+<front>',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
@@ -98,10 +99,10 @@ node/1422',
     'css_class' => '',
     'custom' => 0,
     'delta' => 'display_products-block_2',
-    'icon' => 'a:2:{s:4:"icon";s:0:"";s:8:"position";s:12:"title_before";}',
+    'icon' => 'a:4:{s:4:"icon";s:0:"";s:7:"wrapper";s:0:"";s:13:"wrapper_class";s:0:"";s:8:"position";s:12:"title_before";}',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '<front>',
+    'pages' => '',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
