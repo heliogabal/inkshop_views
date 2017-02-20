@@ -21,6 +21,8 @@ function inkshop_views_strongarm() {
     'f3f98e42ba2d4d3103b95e9199cf48fe' => 'commerce_reports_customers-chart_revenue',
     'c4b82619a01ea13a002f9a56cf7aa611' => 'commerce_reports_customers-chart_orders',
     '1202ceb6776b83fcec936c8c719b429a' => 'commerce_line_item_table-block_1',
+    '4fd19d33648cc13fba188307606a1609' => 'commerce_line_item_table-block_2',
+    '29c4ed68a0ca8de6aef52a9096424841' => 'commerce_line_item_table-block_3',
     '12ee390cd50dc30503906cc11aa2f55a' => 'display_products-search_api_views_facets_block_1',
     '5d696ecceabf7d4636f78d68c7c84361' => 'display_products-search_api_views_facets_block_2',
     '78e73a6d90260821c9380e14fef3bcdb' => 'display_products-search_api_views_facets_block_3',

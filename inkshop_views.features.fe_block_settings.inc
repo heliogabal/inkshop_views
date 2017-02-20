@@ -53,7 +53,7 @@ function inkshop_views_default_fe_block_settings() {
   );
 
   $export['views-display_products-block_1'] = array(
-    'cache' => -1,
+    'cache' => 8,
     'css_class' => '',
     'custom' => 0,
     'delta' => 'display_products-block_1',
@@ -62,7 +62,9 @@ function inkshop_views_default_fe_block_settings() {
     'node_types' => array(),
     'pages' => 'suedlink-abo
 node/1422
-<front>',
+<front>
+/produkt/suedlink-inkota-brief/*
+produkt/suedlink-inkota-brief/*',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(
