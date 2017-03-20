@@ -28,6 +28,7 @@ dependencies[] = message
 dependencies[] = search_api_views
 dependencies[] = strongarm
 dependencies[] = views
+dependencies[] = views_content_cache
 dependencies[] = views_data_export
 dependencies[] = views_fluid_grid
 dependencies[] = views_litepager

@@ -62,9 +62,7 @@ function inkshop_views_default_fe_block_settings() {
     'node_types' => array(),
     'pages' => 'suedlink-abo
 node/1422
-<front>
-/produkt/suedlink-inkota-brief/*
-produkt/suedlink-inkota-brief/*',
+<front>',
     'roles' => array(),
     'themes' => array(
       'adminimal' => array(

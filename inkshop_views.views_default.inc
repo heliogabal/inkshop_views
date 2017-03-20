@@ -25,7 +25,11 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'Alle neuen Produkte';
   $handler->display->display_options['access']['type'] = 'none';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'search_api_views_cache';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Suchen';
@@ -67,7 +71,7 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['content'] = 'Leider keine Ergebnisse zu Ihrer Suche gefunden.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Field: Content: Rendered Beitrag */
+  /* Field: Content: Rendered Content */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
@@ -76,12 +80,12 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'product_list';
-  /* Sort criterion: Indexed Beitrag: Date created */
+  /* Sort criterion: Indexed Content: Date created */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Indexed Beitrag: Content type */
+  /* Contextual filter: Indexed Content: Content type */
   $handler->display->display_options['arguments']['type']['id'] = 'type';
   $handler->display->display_options['arguments']['type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['arguments']['type']['field'] = 'type';
@@ -133,7 +137,7 @@ function inkshop_views_views_default_views() {
     'search_api_aggregation_4' => 'search_api_aggregation_4',
     'search_api_aggregation_5' => 'search_api_aggregation_5',
   );
-  /* Filter criterion: Indexed Beitrag: Content type */
+  /* Filter criterion: Indexed Content: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -172,14 +176,14 @@ function inkshop_views_views_default_views() {
   /* Display: Südlink */
   $handler = $view->new_display('page', 'Südlink', 'page_1');
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Beitrag: Title */
+  /* Sort criterion: Indexed Content: Title */
   $handler->display->display_options['sorts']['title_field']['id'] = 'title_field';
   $handler->display->display_options['sorts']['title_field']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['sorts']['title_field']['field'] = 'title_field';
   $handler->display->display_options['sorts']['title_field']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Indexed Beitrag: Content type */
+  /* Filter criterion: Indexed Content: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -187,7 +191,7 @@ function inkshop_views_views_default_views() {
     'product_display' => 'product_display',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Indexed Beitrag: Format */
+  /* Filter criterion: Indexed Content: Format */
   $handler->display->display_options['filters']['field_pd_type']['id'] = 'field_pd_type';
   $handler->display->display_options['filters']['field_pd_type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['field_pd_type']['field'] = 'field_pd_type';
@@ -208,11 +212,22 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Aktuelles Heft';
   $handler->display->display_options['defaults']['cache'] = FALSE;
-  $handler->display->display_options['cache']['type'] = 'search_api_views_cache';
-  $handler->display->display_options['cache']['results_lifespan'] = '3600';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '3600';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['type'] = 'views_content_cache';
+  $handler->display->display_options['cache']['results_min_lifespan'] = '60';
+  $handler->display->display_options['cache']['results_max_lifespan'] = '21600';
+  $handler->display->display_options['cache']['output_min_lifespan'] = '60';
+  $handler->display->display_options['cache']['output_max_lifespan'] = '21600';
+  $handler->display->display_options['cache']['keys'] = array(
+    'node' => array(
+      'product_display' => 'product_display',
+      'page' => 0,
+      'donation' => 0,
+      'webform' => 0,
+    ),
+    'node_only' => array(
+      'node_changed' => 'node_changed',
+    ),
+  );
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -228,7 +243,7 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['row_options']['view_mode'] = 'aehnliche_produkte';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Beitrag: Date created */
+  /* Sort criterion: Indexed Content: Date created */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
@@ -236,12 +251,15 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Indexed Beitrag: Content type */
+  /* Filter criterion: Indexed Content: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'product_display' => 'product_display',
+  );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Indexed Beitrag: Format */
+  /* Filter criterion: Indexed Content: Format */
   $handler->display->display_options['filters']['field_pd_type_1']['id'] = 'field_pd_type_1';
   $handler->display->display_options['filters']['field_pd_type_1']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['field_pd_type_1']['field'] = 'field_pd_type';
@@ -295,7 +313,7 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['row_options']['view_mode'] = 'aehnliche_produkte';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Indexed Beitrag: Node ID */
+  /* Field: Indexed Content: Node ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -303,7 +321,7 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
-  /* Field: Indexed Beitrag: Title */
+  /* Field: Indexed Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -317,7 +335,7 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['fields']['field_product_field_product_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_product_field_product_subtitle']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_product_field_product_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Indexed Beitrag: Image */
+  /* Field: Indexed Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -350,7 +368,7 @@ function inkshop_views_views_default_views() {
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Indexed Beitrag: Content type */
+  /* Filter criterion: Indexed Content: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -383,13 +401,13 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h2 class="block__title"><!--<a href="/produkte/neu">-->Neueste Produkte<!--</a>--></h2>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Beitrag: Date created */
+  /* Sort criterion: Indexed Content: Date created */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Indexed Beitrag: Content type */
+  /* Contextual filter: Indexed Content: Content type */
   $handler->display->display_options['arguments']['type']['id'] = 'type';
   $handler->display->display_options['arguments']['type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['arguments']['type']['field'] = 'type';
@@ -411,7 +429,7 @@ function inkshop_views_views_default_views() {
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Indexed Beitrag: Content type */
+  /* Filter criterion: Indexed Content: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -431,7 +449,7 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Indexed Beitrag: Content type */
+  /* Filter criterion: Indexed Content: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -439,7 +457,7 @@ function inkshop_views_views_default_views() {
     'product_display' => 'product_display',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Indexed Beitrag: Date created */
+  /* Filter criterion: Indexed Content: Date created */
   $handler->display->display_options['filters']['created']['id'] = 'created';
   $handler->display->display_options['filters']['created']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['created']['field'] = 'created';
