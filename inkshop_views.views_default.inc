@@ -61,17 +61,17 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['style_options']['border_radius'] = '0';
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'teaser';
-  /* Footer: Global: Unfiltered text */
+  /* Fußbereich: Global: Unfiltered text */
   $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
-  /* No results behavior: Global: Text area */
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Textbereich */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['content'] = 'Leider keine Ergebnisse zu Ihrer Suche gefunden.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Field: Content: Rendered Content */
+  /* Feld: Inhalt: Rendered Inhalt */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
@@ -80,19 +80,19 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'product_list';
-  /* Sort criterion: Indexed Content: Date created */
+  /* Sortierkriterien: Indizierter Inhalt: Date created */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Indexed Content: Content type */
+  /* Kontextfilter: Indizierter Inhalt: Content type */
   $handler->display->display_options['arguments']['type']['id'] = 'type';
   $handler->display->display_options['arguments']['type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['arguments']['type']['field'] = 'type';
   $handler->display->display_options['arguments']['type']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['type']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['type']['summary']['format'] = 'default_summary';
-  /* Contextual filter: Search: More like this */
+  /* Kontextfilter: Suche: Ähnliche Einträge */
   $handler->display->display_options['arguments']['search_api_views_more_like_this']['id'] = 'search_api_views_more_like_this';
   $handler->display->display_options['arguments']['search_api_views_more_like_this']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['arguments']['search_api_views_more_like_this']['field'] = 'search_api_views_more_like_this';
@@ -105,7 +105,7 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['arguments']['search_api_views_more_like_this']['validate_options']['types'] = array(
     'product_display' => 'product_display',
   );
-  /* Filter criterion: Search: Fulltext search */
+  /* Filterkriterium: Suche: Volltextsuche */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
@@ -137,7 +137,7 @@ function inkshop_views_views_default_views() {
     'search_api_aggregation_4' => 'search_api_aggregation_4',
     'search_api_aggregation_5' => 'search_api_aggregation_5',
   );
-  /* Filter criterion: Indexed Content: Content type */
+  /* Filterkriterium: Indizierter Inhalt: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -176,14 +176,14 @@ function inkshop_views_views_default_views() {
   /* Display: Südlink */
   $handler = $view->new_display('page', 'Südlink', 'page_1');
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Content: Title */
+  /* Sortierkriterien: Indizierter Inhalt: Title */
   $handler->display->display_options['sorts']['title_field']['id'] = 'title_field';
   $handler->display->display_options['sorts']['title_field']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['sorts']['title_field']['field'] = 'title_field';
   $handler->display->display_options['sorts']['title_field']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Indexed Content: Content type */
+  /* Filterkriterium: Indizierter Inhalt: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -191,7 +191,7 @@ function inkshop_views_views_default_views() {
     'product_display' => 'product_display',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Indexed Content: Format */
+  /* Filterkriterium: Indizierter Inhalt: Format */
   $handler->display->display_options['filters']['field_pd_type']['id'] = 'field_pd_type';
   $handler->display->display_options['filters']['field_pd_type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['field_pd_type']['field'] = 'field_pd_type';
@@ -243,7 +243,7 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['row_options']['view_mode'] = 'aehnliche_produkte';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Content: Date created */
+  /* Sortierkriterien: Indizierter Inhalt: Date created */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
@@ -251,7 +251,7 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Indexed Content: Content type */
+  /* Filterkriterium: Indizierter Inhalt: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -259,7 +259,7 @@ function inkshop_views_views_default_views() {
     'product_display' => 'product_display',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Indexed Content: Format */
+  /* Filterkriterium: Indizierter Inhalt: Format */
   $handler->display->display_options['filters']['field_pd_type_1']['id'] = 'field_pd_type_1';
   $handler->display->display_options['filters']['field_pd_type_1']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['field_pd_type_1']['field'] = 'field_pd_type';
@@ -313,7 +313,7 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['row_options']['view_mode'] = 'aehnliche_produkte';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Indexed Content: Node ID */
+  /* Feld: Indizierter Inhalt: Node ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -321,21 +321,21 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
-  /* Field: Indexed Content: Title */
+  /* Feld: Indizierter Inhalt: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
-  /* Field: Product: Subtitle (indexed) */
+  /* Feld: Product: Subtitle (indexed) */
   $handler->display->display_options['fields']['field_product_field_product_subtitle']['id'] = 'field_product_field_product_subtitle';
   $handler->display->display_options['fields']['field_product_field_product_subtitle']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['fields']['field_product_field_product_subtitle']['field'] = 'field_product_field_product_subtitle';
   $handler->display->display_options['fields']['field_product_field_product_subtitle']['label'] = '';
   $handler->display->display_options['fields']['field_product_field_product_subtitle']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_product_field_product_subtitle']['element_label_colon'] = FALSE;
-  /* Field: Indexed Content: Image */
+  /* Feld: Indizierter Inhalt: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -353,7 +353,7 @@ function inkshop_views_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Search: More like this */
+  /* Kontextfilter: Suche: Ähnliche Einträge */
   $handler->display->display_options['arguments']['search_api_views_more_like_this']['id'] = 'search_api_views_more_like_this';
   $handler->display->display_options['arguments']['search_api_views_more_like_this']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['arguments']['search_api_views_more_like_this']['field'] = 'search_api_views_more_like_this';
@@ -368,7 +368,7 @@ function inkshop_views_views_default_views() {
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Indexed Content: Content type */
+  /* Filterkriterium: Indizierter Inhalt: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -393,7 +393,7 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -401,20 +401,20 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h2 class="block__title"><!--<a href="/produkte/neu">-->Neueste Produkte<!--</a>--></h2>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Content: Date created */
+  /* Sortierkriterien: Indizierter Inhalt: Date created */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Indexed Content: Content type */
+  /* Kontextfilter: Indizierter Inhalt: Content type */
   $handler->display->display_options['arguments']['type']['id'] = 'type';
   $handler->display->display_options['arguments']['type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['arguments']['type']['field'] = 'type';
   $handler->display->display_options['arguments']['type']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['type']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['type']['summary']['format'] = 'default_summary';
-  /* Contextual filter: Search: More like this */
+  /* Kontextfilter: Suche: Ähnliche Einträge */
   $handler->display->display_options['arguments']['search_api_views_more_like_this']['id'] = 'search_api_views_more_like_this';
   $handler->display->display_options['arguments']['search_api_views_more_like_this']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['arguments']['search_api_views_more_like_this']['field'] = 'search_api_views_more_like_this';
@@ -429,7 +429,7 @@ function inkshop_views_views_default_views() {
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Indexed Content: Content type */
+  /* Filterkriterium: Indizierter Inhalt: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -449,7 +449,7 @@ function inkshop_views_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Indexed Content: Content type */
+  /* Filterkriterium: Indizierter Inhalt: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -457,7 +457,7 @@ function inkshop_views_views_default_views() {
     'product_display' => 'product_display',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Indexed Content: Date created */
+  /* Filterkriterium: Indizierter Inhalt: Date created */
   $handler->display->display_options['filters']['created']['id'] = 'created';
   $handler->display->display_options['filters']['created']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['created']['field'] = 'created';
@@ -483,7 +483,7 @@ function inkshop_views_views_default_views() {
     t('Alle'),
     t('Shop durchsuchen'),
     t('Startseite'),
-    t('more'),
+    t('mehr'),
     t('Südlink'),
     t('Südlink: Aktuelles Heft'),
     t('Aktuelles Heft'),
@@ -508,6 +508,283 @@ function inkshop_views_views_default_views() {
     t('Zeigt die neusten Produkte in einer Übersicht'),
   );
   $export['display_products'] = $view;
+
+  $view = new view();
+  $view->name = 'shopping_cart';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'commerce_order';
+  $view->human_name = 'shopping cart';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'shopping cart';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'line_item_id' => 'line_item_id',
+    'nothing' => 'nothing',
+  );
+  /* Fußbereich: Commerce Line Item: Zusammenfassung der Position */
+  $handler->display->display_options['footer']['line_item_summary']['id'] = 'line_item_summary';
+  $handler->display->display_options['footer']['line_item_summary']['table'] = 'commerce_line_item';
+  $handler->display->display_options['footer']['line_item_summary']['field'] = 'line_item_summary';
+  $handler->display->display_options['footer']['line_item_summary']['links'] = array(
+    'view_cart' => 'view_cart',
+    'checkout' => 'checkout',
+  );
+  $handler->display->display_options['footer']['line_item_summary']['info'] = array(
+    'quantity' => 'quantity',
+    'total' => 'total',
+  );
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Textbereich */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Ihr Warenkorb ist leer.<br /> <br />
+<a href="/">Zurück zur Webshop Startseite</a>
+';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Commerce Line Item: Zusammenfassung der Position */
+  $handler->display->display_options['empty']['line_item_summary']['id'] = 'line_item_summary';
+  $handler->display->display_options['empty']['line_item_summary']['table'] = 'commerce_line_item';
+  $handler->display->display_options['empty']['line_item_summary']['field'] = 'line_item_summary';
+  $handler->display->display_options['empty']['line_item_summary']['info'] = array(
+    'quantity' => 'quantity',
+    'total' => 'total',
+  );
+  /* Beziehung: Bestellung: Referenced line items */
+  $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['id'] = 'commerce_line_items_line_item_id';
+  $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['table'] = 'field_data_commerce_line_items';
+  $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['field'] = 'commerce_line_items_line_item_id';
+  $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['required'] = TRUE;
+  /* Feld: Commerce Line Item: ID der Position */
+  $handler->display->display_options['fields']['line_item_id']['id'] = 'line_item_id';
+  $handler->display->display_options['fields']['line_item_id']['table'] = 'commerce_line_item';
+  $handler->display->display_options['fields']['line_item_id']['field'] = 'line_item_id';
+  $handler->display->display_options['fields']['line_item_id']['relationship'] = 'commerce_line_items_line_item_id';
+  $handler->display->display_options['fields']['line_item_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['line_item_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['line_item_id']['alter']['text'] = '<a href="/cart">[line_item_id]</a>';
+  $handler->display->display_options['fields']['line_item_id']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['line_item_id']['empty_zero'] = TRUE;
+  /* Feld: Global: Benutzerdefinierter Text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Kontextfilter: Commerce Order: Bestellnummer (ID) */
+  $handler->display->display_options['arguments']['order_id']['id'] = 'order_id';
+  $handler->display->display_options['arguments']['order_id']['table'] = 'commerce_order';
+  $handler->display->display_options['arguments']['order_id']['field'] = 'order_id';
+  $handler->display->display_options['arguments']['order_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['order_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['order_id']['default_argument_type'] = 'commerce_cart_current_cart_order_id';
+  $handler->display->display_options['arguments']['order_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['order_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['order_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['order_id']['validate']['fail'] = 'empty';
+  /* Filterkriterium: Commerce Line Item: Line item is of a product line item type */
+  $handler->display->display_options['filters']['product_line_item_type']['id'] = 'product_line_item_type';
+  $handler->display->display_options['filters']['product_line_item_type']['table'] = 'commerce_line_item';
+  $handler->display->display_options['filters']['product_line_item_type']['field'] = 'product_line_item_type';
+  $handler->display->display_options['filters']['product_line_item_type']['relationship'] = 'commerce_line_items_line_item_id';
+  $handler->display->display_options['filters']['product_line_item_type']['value'] = '1';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Textbereich */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['content'] = 'Leer';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Commerce Line Item: Zusammenfassung der Position */
+  $handler->display->display_options['empty']['line_item_summary']['id'] = 'line_item_summary';
+  $handler->display->display_options['empty']['line_item_summary']['table'] = 'commerce_line_item';
+  $handler->display->display_options['empty']['line_item_summary']['field'] = 'line_item_summary';
+  $handler->display->display_options['empty']['line_item_summary']['empty'] = TRUE;
+  $handler->display->display_options['empty']['line_item_summary']['info'] = array(
+    'quantity' => 'quantity',
+    'total' => 'total',
+  );
+  $translatables['shopping_cart'] = array(
+    t('Master'),
+    t('shopping cart'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Ihr Warenkorb ist leer.<br /> <br />
+<a href="/">Zurück zur Webshop Startseite</a>
+'),
+    t('Line items referenced by commerce_line_items'),
+    t('ID der Position'),
+    t('<a href="/cart">[line_item_id]</a>'),
+    t('.'),
+    t(','),
+    t('Alle'),
+    t('Block'),
+    t('Leer'),
+  );
+  $export['shopping_cart'] = $view;
+
+  $view = new view();
+  $view->name = 'warenkorb_block';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'commerce_order';
+  $view->human_name = 'Warenkorb Block minimiert';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'shopping cart';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Fußbereich: Commerce Line Item: Zusammenfassung der Position */
+  $handler->display->display_options['footer']['line_item_summary']['id'] = 'line_item_summary';
+  $handler->display->display_options['footer']['line_item_summary']['table'] = 'commerce_line_item';
+  $handler->display->display_options['footer']['line_item_summary']['field'] = 'line_item_summary';
+  $handler->display->display_options['footer']['line_item_summary']['links'] = array(
+    'view_cart' => 0,
+    'checkout' => 'checkout',
+  );
+  $handler->display->display_options['footer']['line_item_summary']['info'] = array(
+    'quantity' => 'quantity',
+    'total' => 'total',
+  );
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Textbereich */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['content'] = 'Your cart is empty.';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Commerce Line Item: Zusammenfassung der Position */
+  $handler->display->display_options['empty']['line_item_summary']['id'] = 'line_item_summary';
+  $handler->display->display_options['empty']['line_item_summary']['table'] = 'commerce_line_item';
+  $handler->display->display_options['empty']['line_item_summary']['field'] = 'line_item_summary';
+  $handler->display->display_options['empty']['line_item_summary']['info'] = array(
+    'quantity' => 'quantity',
+    'total' => 'total',
+  );
+  /* Beziehung: Bestellung: Referenced line items */
+  $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['id'] = 'commerce_line_items_line_item_id';
+  $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['table'] = 'field_data_commerce_line_items';
+  $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['field'] = 'commerce_line_items_line_item_id';
+  $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['required'] = TRUE;
+  /* Feld: Commerce Line Item: ID der Position */
+  $handler->display->display_options['fields']['line_item_id']['id'] = 'line_item_id';
+  $handler->display->display_options['fields']['line_item_id']['table'] = 'commerce_line_item';
+  $handler->display->display_options['fields']['line_item_id']['field'] = 'line_item_id';
+  $handler->display->display_options['fields']['line_item_id']['relationship'] = 'commerce_line_items_line_item_id';
+  $handler->display->display_options['fields']['line_item_id']['exclude'] = TRUE;
+  /* Feld: Global: Benutzerdefinierter Text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Kontextfilter: Commerce Order: Bestellnummer (ID) */
+  $handler->display->display_options['arguments']['order_id']['id'] = 'order_id';
+  $handler->display->display_options['arguments']['order_id']['table'] = 'commerce_order';
+  $handler->display->display_options['arguments']['order_id']['field'] = 'order_id';
+  $handler->display->display_options['arguments']['order_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['order_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['order_id']['default_argument_type'] = 'commerce_cart_current_cart_order_id';
+  $handler->display->display_options['arguments']['order_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['order_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['order_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['order_id']['validate']['fail'] = 'empty';
+  /* Filterkriterium: Commerce Line Item: Line item is of a product line item type */
+  $handler->display->display_options['filters']['product_line_item_type']['id'] = 'product_line_item_type';
+  $handler->display->display_options['filters']['product_line_item_type']['table'] = 'commerce_line_item';
+  $handler->display->display_options['filters']['product_line_item_type']['field'] = 'product_line_item_type';
+  $handler->display->display_options['filters']['product_line_item_type']['relationship'] = 'commerce_line_items_line_item_id';
+  $handler->display->display_options['filters']['product_line_item_type']['value'] = '1';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Textbereich */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['content'] = 'Leer';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Commerce Line Item: Zusammenfassung der Position */
+  $handler->display->display_options['empty']['line_item_summary']['id'] = 'line_item_summary';
+  $handler->display->display_options['empty']['line_item_summary']['table'] = 'commerce_line_item';
+  $handler->display->display_options['empty']['line_item_summary']['field'] = 'line_item_summary';
+  $handler->display->display_options['empty']['line_item_summary']['links'] = array(
+    'view_cart' => 0,
+    'checkout' => 'checkout',
+  );
+  $handler->display->display_options['empty']['line_item_summary']['info'] = array(
+    'quantity' => 'quantity',
+    'total' => 'total',
+  );
+  $translatables['warenkorb_block'] = array(
+    t('Master'),
+    t('shopping cart'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Your cart is empty.'),
+    t('Line items referenced by commerce_line_items'),
+    t('ID der Position'),
+    t('.'),
+    t(','),
+    t('Alle'),
+    t('Block'),
+    t('Leer'),
+  );
+  $export['warenkorb_block'] = $view;
 
   return $export;
 }
